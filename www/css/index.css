@@ -23,8 +23,6 @@
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    background-color: red;
-    background-image: linear-gradient(to bottom, #da1f1f, #f55b7f, #f498c8, #eed0f2, #ffffff);
     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
     font-size:12px;
     height:100vh;
@@ -108,6 +106,12 @@ h1 {
     }
 }
 
+
+.page {
+    background-color: red;
+    background-image: linear-gradient(to bottom, #da1f1f, #f55b7f, #f498c8, #eed0f2, #ffffff);
+    
+}
 a{
    text-align: center; 
 }

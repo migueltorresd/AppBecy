@@ -39,21 +39,23 @@
     
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
-       
-            <!-- Top Navbar -->
-            <div class="navbar">
-                <div class="navbar-bg"></div>
-                <div class="navbar-inner">
-                    <div class="left"><i class="icon icon-back"></i></div>
-                    <div class="title">Bienvenidos</div>
-              
-                    <div class="right"><i class="icon icon-forward"></i></div>
+        <!-- Top Navbar -->
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+                <div class="left"><i class="icon icon-back"></i></div>
+                <div class="title">LOGIN</div>
+                <div class="right"><i class="icon icon-forward"></i></div>
+            </div>
+        </div>
+             <!-- Toolbar -->
+             <div class="toolbar toolbar-bottom">
+                <div class="toolbar-inner">
+                <!-- Toolbar links -->
+                <a href="#" class="link">Link 1</a>
                 </div>
             </div>
-    
-            <!-- Toolbar -->
-       
-        
+               
         <!-- Initial Page, "data-name" contains page name -->
             <div data-name="index" class="page">
                 <!-- Scrollable page content -->
@@ -61,31 +63,50 @@
                     <div class="block">
                     
                         <!-- Link to another page -->
-                        <img src="./img/BECY.png" alt="logo pagina">
-                        <a>Directorio Digital</a>
-
-                        <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
+                        <img src="./img/BECY.png" alt="logo pagina">                    
+                        <div class="block-title">Tu Directorio digital</div>
+                          <div class="list no-hairlines-md">
+                            <ul>
+                              <li class="item-content item-input">
+                                <div class="item-inner">
+                                  <i class="f7-icons">envelope</i>
+                                  <div class="item-title item-label">E-mail</div>
+                                  <div class="item-input-wrap">
+                                    <input type="email" placeholder="Your e-mail" id="lEmail"/>
+                                    <span class="input-clear-button"></span>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="item-content item-input">
+                                <div class="item-inner">
+                                  <i class="f7-icons">keyboard</i>
+                                  <div class="item-title item-label">Password</div>
+                                  <div class="item-input-wrap">
+                                    <input type="password" placeholder="Your password"  id="lPassword"/>
+                                    <span class="input-clear-button"></span>
+                                  </div>
+                                </div>
+                              </li>                              
+                            </ul>   
+                            </div> 
+                        </div> 
+                        <div class="block block-strong">
+                          <p class="row">  
+                        <button class="col button button-outline button-round button-raised" id="lIngresa">ENTRAR</button> 
+                      </p>    
+                    </div>
+                        <h3>¿No has comprado?</h3>
+                        <div class="block block-strong">
+                          <p class="row">
+                        <a href="/Registro.html/" class="col button button-outline button-round button-raised">REGISTRATE</a> 
+                        </p>    
+                      </div>
+                    <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
                  
 
                         <!-- And somewhere in DOM -->
                       
-                            <div class="view">
-                                <div class="page">
-                                    <div class="navbar">
-                                        <div class="navbar-bg"></div>
-                                        <div class="navbar-inner">
-                                            <div class="title">Popup</div>
-                                            <div class="right">
-                                                <!-- Link to close popup -->
-                                                <a class="link popup-close">Close</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="page-content">
-                                      ...
-                                    </div>
-                                </div>
-                            </div>
+                    
                         </div>
                     </div>
                 </div>
@@ -93,6 +114,29 @@
         </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDlvIa3zW-r67ifhB8djkvf17baXgdr9Rs",
+        authDomain: "becy-99bc1.firebaseapp.com",
+        projectId: "becy-99bc1",
+        storageBucket: "becy-99bc1.appspot.com",
+        messagingSenderId: "1076573597017",
+        appId: "1:1076573597017:web:8362cf7f75587e2ab2f048"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+
+
+  
 
     <script type="text/javascript" src="cordova.js"></script>
     <!--<script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>-->

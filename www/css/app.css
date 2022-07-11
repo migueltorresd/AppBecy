@@ -764,3 +764,11 @@ code {
 .pie-chart svg {
   max-width: 320px;
 }
+
+.block-strong, .list ul {
+  background-color: transparent;
+}
+
+.page {
+  background-image: linear-gradient(to bottom, #b50000, #c02d22, #c8463d, #ce5d56, #d2736f, #d8858a, #dc97a2, #deaab8, #e3c0d1, #e8d6e5, #f1ebf4, #ffffff);}
+
