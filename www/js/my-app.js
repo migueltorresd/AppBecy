@@ -17,6 +17,7 @@ var app = new Framework7({
       {  path: '/about/',                   url: 'about.html',},
       {  path: '/index.html/',              url: 'index.html',},
       {  path: '/Registro.html/',           url: 'Registro.html',},
+      {  path: '/Regcompleto.html/',        url: 'Regcompleto.html',},
       {  path: '/panel-usuario/',           url: 'panel-usuario.html',   },
             
     ]
@@ -46,92 +47,4 @@ $$(document).on('page:init', '.page[data-name="inicio-sesion"]', function (e) {
   $$('#bIngresa').on('click', fnIngresa );
 })
 
-
-
-function fnRegistro() {
-
-  email = $$('#rEmail').val();
-  password = $$('#rPassword').val();
-
-// PROMESA
-
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-
-      $$('#rMensaje').html("Bienvenido a mi App!!");
-
-      console.log("Usuario creado");
-
-      mainView.router.navigate('/panel-usuario/');
-
-      
-
-      // ...
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-
-      console.error(errorCode + " -- " + errorMessage);
-
-      switch(errorCode) {
-          case "auth/email-already-in-use": mensaje="La direccion de mail ya está registrada";
-              break
-
-          case "auth/weak-password": mensaje="Clave muy debil. Escribe una más larga";
-              break
-
-          default: mensaje="Intente de nuevo";
-
-      }
-
-      $$('#rMensaje').html("Hubo un error: " + mensaje);
-
-      // ..
-    });
-
-}
-
-function fnIngresa() {
-
-  email = $$('#lEmail').val();
-  password = $$('#lPassword').val();
-
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-
-      $$('#lMensaje').html("Bienvenido a mi App!!");
-
-      console.log("Usuario ingreso");
-
-      mainView.router.navigate('/panel-usuario/');
-      // ...
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-
-      console.error(errorCode + " -- " + errorMessage);
-
-
-      switch(errorCode) {
-          case "auth/wrong-password": mensaje="La clave es incorrecta";
-              break
-
-          case "auth/user-not-found": mensaje="Usuario no encontrado";
-              break
-
-          default: mensaje="Intente de nuevo";
-
-      }
-
-      $$('#rMensaje').html("Hubo un error: " + mensaje);
-
-
-    });
-}
 
