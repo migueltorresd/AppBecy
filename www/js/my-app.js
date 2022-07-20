@@ -15,21 +15,28 @@ var app = new Framework7({
     // Add default routes
     routes: [
       {  path: '/about/',                   url: 'about.html',},
-      {  path: '/index.html/',              url: 'index.html',},
-      {  path: '/Registro.html/',           url: 'Registro.html',},
-      {  path: '/Regcompleto.html/',        url: 'Regcompleto.html',},
-      {  path: '/panel-usuario/',           url: 'panel-usuario.html',   },
-            
+      {  path: '/index/',                   url: 'index.html',},
+      {  path: '/panel-usuario/',           url: 'panel-usuario.html',},
+      {  path: '/regcompleto/',             url: 'regcompleto.html',},
+      {  path: '/registro/',                url: 'registro.html',   },
+      {  path: '/prueba/',                  url: 'prueba.html',   },      
+
+      
     ]
     // ... other parameters
   });
 
 var mainView = app.views.create('.view-main');
 
+var db;
+var colUsuarios;
+
+var mainView = app.views.create('.view-main');
+
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-});
+   });
 
 // Option 1. Using one 'page:init' handler for all pages
 $$(document).on('page:init', function (e) {
@@ -38,13 +45,11 @@ $$(document).on('page:init', function (e) {
 })
 
 // Option 2. Using live 'page:init' event handlers for each page
+
+
 $$(document).on('page:init', '.page[data-name="about"]', function (e) {
-  // Hacer algo aquí cuando la página con el atributo data-name="about" se carga e inicializa  
-    $$('#bRegistro').on('click',fnRegistro )
+  $$('#bIngresa').on('click',imprimir);
 })
 
-$$(document).on('page:init', '.page[data-name="inicio-sesion"]', function (e) {
-  $$('#bIngresa').on('click', fnIngresa );
-})
 
 

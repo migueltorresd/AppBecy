@@ -1,3 +1,8 @@
+$$(document).on('page:init', '.page[data-name="index"]', function (e) {
+  $$('#btnlogin').on('click', fnIngresa );
+ 
+});
+
 function fnIngresa() {
 
     email = $$('#lEmail').val();
@@ -38,4 +43,5 @@ function fnIngresa() {
   
       });
   }
+  
   

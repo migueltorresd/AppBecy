@@ -42,8 +42,7 @@
         <!-- Top Navbar -->
         <div class="navbar">
             <div class="navbar-bg"></div>
-            <div class="navbar-inner">
-                <div class="left"><i class="icon icon-back"></i></div>
+            <div class="navbar-inner display-flex justify-content-center nav">
                 <div class="title">LOGIN</div>
                 <div class="right"><i class="icon icon-forward"></i></div>
             </div>
@@ -52,14 +51,14 @@
              <div class="toolbar toolbar-bottom">
                 <div class="toolbar-inner">
                 <!-- Toolbar links -->
-                <a href="#" class="link">Link 1</a>
+                <a href="/prueba/" class="link">Link 1</a>
                 </div>
             </div>
                
         <!-- Initial Page, "data-name" contains page name -->
             <div data-name="index" class="page">
                 <!-- Scrollable page content -->
-                <div class="page-content">
+                <div class="page-content" id="contenedor">
                     <div class="block">
                     
                         <!-- Link to another page -->
@@ -92,13 +91,13 @@
                         </div> 
                         <div class="block block-strong">
                           <p class="row">  
-                        <button class="col button button-outline button-round button-raised" id="lIngresa">ENTRAR</button> 
+                        <button class="col button button-outline button-round button-raised" id="btnlogin">ENTRAR</button> 
                       </p>    
                     </div>
                         <h3>¿No has comprado?</h3>
                         <div class="block block-strong">
                           <p class="row">
-                        <a href="/Registro.html/" class="col button button-outline button-round button-raised">REGISTRATE</a> 
+                        <a href="/registro/" class="col button button-outline button-round button-raised">REGISTRATE</a> 
                         </p>    
                       </div>
                     <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
@@ -138,11 +137,19 @@
 
   
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <!--<script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>-->
-    <script type="text/javascript" src="lib/framework7/framework7.js"></script>
-    <script type="text/javascript" src="js/Registro.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
+<!--<script type="text/javascript" src="lib/framework7/framework7.js"></script>-->
+<script type="text/javascript" src="js/my-app.js"></script>
+
+
+    <!-- <script type="text/javascript" src="js/registro-completo.js"></script> -->
+    <script type="text/javascript" src="js/registro-completo.js"></script>
+    <script type="text/javascript" src="js/registro.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/prueba.js"></script>
+    registro-completo
 </body>
 
 </html>
