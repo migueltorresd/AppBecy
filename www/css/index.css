@@ -119,3 +119,10 @@ a{
 ima{
     width: 500wh;
 }
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 550px;
+   }

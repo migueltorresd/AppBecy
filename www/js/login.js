@@ -16,8 +16,32 @@ function fnIngresa() {
         $$('#lMensaje').html("Bienvenido a mi App!!");
   
         console.log("Usuario ingreso");
-  
-        mainView.router.navigate('/panel-usuario/');
+      //obtener un documento 
+          db = firebase.firestore()
+          db.collection("colUsuarios").doc(email).get() // SE SEÑALA O APUNTA AL DOCUMENTO CON SU IDENTIFICADOR
+          .then((doc) => {
+            if (doc.exists) {
+                console.log("Document data:", doc.data());
+                Rol = doc.data().Rol
+                if(Rol== "Comprador"){
+                  console.log("es comprador");
+                  
+                  mainView.router.navigate('/panel-comprador/')
+
+                }else{
+                  mainView.router.navigate('/panel-vendedor/')
+                }       
+                } 
+                else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
+
+        
+
         // ...
       })
       .catch((error) => {

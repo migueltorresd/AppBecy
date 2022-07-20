@@ -16,7 +16,8 @@ var app = new Framework7({
     routes: [
       {  path: '/about/',                   url: 'about.html',},
       {  path: '/index/',                   url: 'index.html',},
-      {  path: '/panel-usuario/',           url: 'panel-usuario.html',},
+      {  path: '/panel-comprador/',           url: 'panel-comprador.html',},
+      {  path: '/panel-vendedor/',           url: 'panel-vendedor.html',},
       {  path: '/regcompleto/',             url: 'regcompleto.html',},
       {  path: '/registro/',                url: 'registro.html',   },
       {  path: '/prueba/',                  url: 'prueba.html',   },      

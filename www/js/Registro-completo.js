@@ -17,7 +17,9 @@ function fnRegistrocompleto() {
     Fecha = $$('#rfecha').val();
     Cuidad = $$('#rCuidad').val();
     Direccion = $$('#rDireccion').val();
-    Rol = $$('#SelectorRol').val();
+    Rol = $$('#selectorRol').val();
+
+   
 
     // Contruccion de archivo json
 
@@ -31,28 +33,44 @@ function fnRegistrocompleto() {
       Rol: Rol  
     }
      console.log(datosUsu)
-
+   
   // PROMESA
           
-   /* db.collection("cities").doc("LA").set({
-          name: "Los Angeles",
-          state: "CA",
-          country: "USA"
-      })
-      .then(() => {
-          console.log("Document successfully written!");
-      })
-      .catch((error) => {
-          console.error("Error writing document: ", error);
-      });
-      */
-      db.collection("colUsuarios").doc(Identificador).set(datosUsu)
-      .then(() => {
-        console.log("Document successfully written!");
-    })
-    .catch((error) => {
-        console.error("Error writing document: ", error);
-    });
+     console.log(Identificador);
+     db = firebase.firestore();
 
+     db.collection("colUsuarios").doc(Identificador).set(datosUsu)
+     .then(() => {
+       console.log("Document successfully written!");
+
+   })
+   .catch((error) => {
+       console.error("Error writing document: ", error);
+   });
+     //Declarar si o si la variable db para poder inicializar la grabacion de los datos en la db
+  
+ //obtener un documento 
+      db = firebase.firestore()
+      db.collection("colUsuarios").doc(email).get() // SE SEÑALA O APUNTA AL DOCUMENTO CON SU IDENTIFICADOR
+      .then((doc) => {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            Rol = doc.data().Rol
+            if(Rol == "Comprador"){
+              console.log("es comprador");
+              
+              mainView.router.navigate('/panel-comprador/')
+
+            }else{
+              mainView.router.navigate('/panel-vendedor/')
+            }       
+            } 
+            else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+      }).catch((error) => {
+        console.log("Error getting document:", error);
+      });
 
   }
