@@ -1,7 +1,7 @@
-$$(document).on('page:init', '.page[data-name="regcompleto"]', function (e) { 
-    $$('#btnVender').on('click',fnRegistrotienda)
+$$(document).on('page:init', '.page[data-name="regtienda"]', function (e) { 
+    $$('#hola2').on('click',fnRegistrotienda);
   })
-  
+
   function fnRegistrotienda(){
 
     console.log("funcion de registro funciona");
@@ -30,11 +30,12 @@ $$(document).on('page:init', '.page[data-name="regcompleto"]', function (e) {
 
     db.collection("colTiendas").doc(Identificador).set(datosTien)
     .then(() => {
-    console.log("Document successfully written!");
+     console.log("Tienda creada");
+
+      mainView.router.navigate('/regproducto/');
 
     })
     .catch((error) => {
         console.error("Error writing document: ", error);
     });
-
   }

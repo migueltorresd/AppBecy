@@ -62,7 +62,7 @@ function fnRegistrocompleto() {
               mainView.router.navigate('/panel-comprador/')
 
             }else{
-              mainView.router.navigate('/panel-vendedor/')
+              mainView.router.navigate('/regtienda/')
             }       
             } 
             else {

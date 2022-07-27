@@ -16,13 +16,13 @@ var app = new Framework7({
     routes: [
       {  path: '/about/',                   url: 'about.html',},
       {  path: '/index/',                   url: 'index.html',},
-      {  path: '/panel-comprador/',           url: 'panel-comprador.html',},
-      {  path: '/panel-vendedor/',           url: 'panel-vendedor.html',},
+      {  path: '/panel-vendedor/',          url: 'panel-vendedor.html',},
+      {  path: '/panel-comprador/',         url: 'panel-comprador.html',},
+      {  path: '/registro/',                url: 'registro.html',},  
       {  path: '/regcompleto/',             url: 'regcompleto.html',},
-      {  path: '/registro/',                url: 'registro.html',   },
-      {  path: '/prueba/',                  url: 'prueba.html',   },      
+      {  path: '/regtienda/',               url: 'regtienda.html',},
+      {  path: '/regproducto/',             url: 'regproducto.html',}    
 
-      
     ]
     // ... other parameters
   });
@@ -46,8 +46,6 @@ $$(document).on('page:init', function (e) {
 })
 
 // Option 2. Using live 'page:init' event handlers for each page
-
-
 $$(document).on('page:init', '.page[data-name="about"]', function (e) {
   $$('#bIngresa').on('click',imprimir);
 })
