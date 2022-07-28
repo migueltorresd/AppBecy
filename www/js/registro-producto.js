@@ -9,18 +9,20 @@ $$(document).on('page:init', '.page[data-name="regproducto"]', function (e) {
 
     NombreProducto = $$('#rNombreproducto').val();    
     Precio = $$('#rPrecio').val(); 
-    Categoria = $$('#selectorCategoriaProducto').val(); 
+    Categoriaproducto = $$('#selectorCategoriaProducto').val(); 
     ImagenesProducto = $$('#rImagenesProducto').val();
-    DescripcionProducto = $$('#rrDescripcionProducto').val();
+    DescripcionProducto = $$('#rDescripcionProducto').val();
    
 
     // Contruccion de archivo json
     var datosProducto ={
-        Nombretienda: NombreProducto,
+        NombreProducto: NombreProducto,
         Precio: Precio,
-        Categoria: Categoria,
-        ImagenesTien: ImagenesProducto,
-        DescripcionTien: DescripcionProducto
+        CategoriaProducto: Categoriaproducto,
+        ImagenesProduct: ImagenesProducto,
+        DescripcionProducto: DescripcionProducto,
+        ImagenesTien: ImagenesTien,
+        Nombretienda: Nombretienda
     }
     
     console.log(datosProducto)
@@ -30,7 +32,9 @@ $$(document).on('page:init', '.page[data-name="regproducto"]', function (e) {
 
     db = firebase.firestore();
 
-    db.collection("colProductos").doc(Identificador).set(datosProducto)
+    //db.collection("colProductos").doc(Identificador).set(datosProducto)
+    db.collection("colProductos").add(datosProducto)
+    
     .then(() => {
      console.log("Producto creado");
 

@@ -29,7 +29,10 @@ function fnIngresa() {
                   mainView.router.navigate('/panel-comprador/')
 
                 }else{
-                  mainView.router.navigate('/panel-vendedor/')
+                  //setear las variables globales
+                   Nombretienda = doc.data().Nombretienda;
+                   ImagenesTien = doc.data().ImagenesTien;
+                  mainView.router.navigate('/regproducto/')
                 }       
                 } 
                 else {

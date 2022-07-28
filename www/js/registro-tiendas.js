@@ -2,6 +2,8 @@ $$(document).on('page:init', '.page[data-name="regtienda"]', function (e) {
     $$('#hola2').on('click',fnRegistrotienda);
   })
 
+  var Nombretienda,ImagenesTien;
+
   function fnRegistrotienda(){
 
     console.log("funcion de registro funciona");
