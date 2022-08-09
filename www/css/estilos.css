@@ -35,3 +35,92 @@ button {
      background-position: 0% 50%;
     }
    }
+
+#b {
+    margin: 0;
+    padding: 0;
+    min-height: 50vh;
+   
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#b, .nav, .menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    position: relative;
+    background-color: #fff;
+    padding: 8px;
+    transition: 0.5s;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 8px 10px rgba(0,0,0,.2);
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.nav input:checked ~ .menu {
+    width: 300px;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.menu li a:hover {
+    color: #161919;
+}
+
+.nav input {
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    opacity: 0.1;
+}
+
+.nav span {
+    position: absolute;
+    left: 5px;
+    width: 20px;
+    height: 4px;
+    border-radius: 50px;
+    background-color: #666;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.nav input:checked ~ span {
+    background-color: #f974a1;
+}
+
+.nav span:nth-child(2) {
+    transform: translateY(-2px);
+}
+
+.nav input:checked ~ span:nth-child(2) {
+    transform: translateY(0) rotate(-45deg);
+}
+.nav span:nth-child(2) {
+    transform: translateY(6px);
+}
+
+.nav input:checked ~ span:nth-child(3) {
+    transform: translateY(0) rotate(45deg);
+}

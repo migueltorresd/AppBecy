@@ -17,7 +17,7 @@ $$(document).on('page:init', '.page[data-name="panel-vendedor"]', function (e) {
               <td class="label-cell">${doc.data().NombreProducto}</td>
               <td class="label-cell">${doc.data().DescripcionProducto}</td>
               <td class="numeric-cell">${doc.data().Precio}</td>
-              <td class="numeric-cell">4</td>    
+              <td class="numeric-cell">1</td>    
             </tr>
             ...
             
